@@ -86,7 +86,17 @@ If you have problems installing `pgcli` with the command above, try this:
 conda install -c conda-forge pgcli
 pip install -U mycli
 ```
-
+Encountered issue:
+ImportError: no pq wrapper available.
+Attempts made:
+- couldn't import psycopg 'c' implementation: No module named 'psycopg_c'
+- couldn't import psycopg 'binary' implementation: No module named 'psycopg_binary'
+- couldn't import psycopg 'python' implementation: libpq library not found
+Resolved by running
+```bash
+pip3 install psycopg2-binary
+pip3 install psycopg_binary
+```
 Using `pgcli` to connect to Postgres
 
 ```bash
